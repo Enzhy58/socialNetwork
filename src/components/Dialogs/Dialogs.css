@@ -1,0 +1,59 @@
+.dialogs {
+    display: flex;
+    background-color: #16171B;
+    border-radius: 21px;
+    border: 1px solid #FFD6FE;
+    padding: 40px 60px;
+}
+
+.dialogs__wrapper:nth-child(1) {
+    padding-right: 100px;
+    border-right: 1px solid #FFD6FE;
+}
+
+.dialogs__wrapper:nth-child(2) {
+    padding-left: 100px;
+}
+
+.dialogs-name__item {
+    font-family: 'Jost';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+    padding-left: 22px;
+    position: relative;
+}
+
+.dialogs-name__item::before {
+    content: '';
+    position: absolute;
+    background-image: url("./../../images/icons/dialogs-elips.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 12px;
+    height: 12px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.dialogs-name__item:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.dialogs-text__list {
+    margin-bottom: 50px;
+}
+
+.dialogs-text__item {
+    background-color: #464C4F;
+    border-radius: 21px;
+    padding: 15px;
+    max-width: 300px;
+    width: 100%;
+}
+
+.dialogs-text__item:not(:last-child) {
+    margin-bottom: 20px;
+}

@@ -1,0 +1,48 @@
+.post {
+    background-color: #16171B;
+    border-radius: 21px;
+    border: 1px solid #FFD6FE;
+    padding: 40px 60px;
+    margin-bottom: 20px;
+}
+
+.post__wrapper {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.post__img {
+    border-radius: 50%;
+    margin-right: 25px;
+}
+
+.post__text {
+    font-family: 'Jost';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+}
+
+.post__text p {
+    margin: 0;
+}
+
+.post__like {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+}
+
+.post__like::before {
+    content: '';
+    position: absolute;
+    background-image: url("../../../../images/icons/heart.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 25px;
+    height: 25px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
