@@ -4,7 +4,7 @@ import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 import { Route, Routes } from 'react-router-dom';
-import store from './redux/store';
+import store from './redux/redux-store';
 
 
 function App(props) {
