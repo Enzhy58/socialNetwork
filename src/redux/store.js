@@ -10,7 +10,7 @@ let store = {
                 { id: 2, post: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut repellat error ab, esse consequatur voluptas. Molestias, natus iure explicabo magnam facere quaerat. Dolorem debitis earum nostrum delectus, cum voluptas omnis?', like: 42 },
                 { id: 3, post: 'Nobody loves me((', like: 15 }
             ],
-            newPostText: 'it-camasutra.com'
+            newPostText: ''
         },
     
         dialogsPage: {
