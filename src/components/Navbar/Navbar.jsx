@@ -9,7 +9,7 @@ const Navbar = () => {
                     <NavLink className="menu__link" to="/profile">Profile</NavLink>
                 </li>
                 <li className="menu__item">
-                    <a className="menu__link" href="#">Friends</a>
+                    <NavLink className="menu__link" to="/users">Users</NavLink>
                 </li>
                 <li className="menu__item">
                     <NavLink className="menu__link" to="/dialogs">Messages</NavLink>
