@@ -33,7 +33,7 @@
 .post__like::before {
     content: '';
     position: absolute;
-    background-image: url("../../../../images/icons/heart.svg");
+    background-image: url("../../../../assets/images/icons/heart.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;

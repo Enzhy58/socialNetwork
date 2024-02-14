@@ -1,4 +1,4 @@
-import user from './../../../../images/user.jpg';
+import user from './../../../../assets/images/user.jpg';
 import './Post.css';
 
 const Post = (props) => {

@@ -27,7 +27,7 @@
 .dialogs-name__item::before {
     content: '';
     position: absolute;
-    background-image: url("./../../images/icons/dialogs-elips.svg");
+    background-image: url("./../../assets/images/icons/dialogs-elips.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;

@@ -1,5 +1,5 @@
-import theme from './../../../images/theme.jpg';
-import user from './../../../images/user.jpg';
+import theme from './../../../assets/images/theme.jpg';
+import user from './../../../assets/images/user.jpg';
 import './ProfileInfo.css';
 
 const ProfileInfo = () => {

@@ -1,6 +1,7 @@
 import React from 'react';
 import './Users.css';
 import axios from 'axios';
+import userPhoto from '../../assets/images/userPhoto.jpg';
 
 const Users = (props) => {
 
@@ -20,7 +21,7 @@ const Users = (props) => {
 
                     <div>
 
-                        <img className="users__img" src={u.photos.small} alt="" />
+                        <img className="users__img" src={u.photos.small != null ? u.photos.small : userPhoto} alt="" />
 
                         <div>
                             {u.followed
