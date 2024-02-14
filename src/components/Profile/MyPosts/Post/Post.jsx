@@ -3,7 +3,7 @@ import './Post.css';
 
 const Post = (props) => {
     return (
-        <div className="post">
+        <div className="post background">
             <div className="post__wrapper">
                 <img className="post__img" src={user} alt="" width="94" height="94" />
                 <div className="post__text">

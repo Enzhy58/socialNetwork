@@ -1,0 +1,58 @@
+.users__list {
+    margin-bottom: 50px;
+}
+
+.users__item {
+    display: flex;
+    padding: 30px 30px;
+}
+
+.users__item:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.users__img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+}
+
+.users__btn {
+    font-size: 20px;
+    padding: 5px 50px;
+    width: 177px;
+}
+
+.users__wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 60px;
+}
+
+.users__info,
+.users__location {
+    display: flex;
+    flex-direction: column;
+}
+
+.users__info {
+    justify-content: space-around;
+}
+
+.users__name {
+    font-size: 30px;
+}
+
+.users__status {
+    font-size: 20px;
+}
+
+.users__location {
+    justify-content: center;
+}
+
+.users__more {
+    margin: 0 auto;
+}

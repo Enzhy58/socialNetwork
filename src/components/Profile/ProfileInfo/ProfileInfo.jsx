@@ -6,7 +6,7 @@ const ProfileInfo = () => {
     return (
         <div>
             <img className="profile__img" src={theme} alt="тема" width="900" height="310" />
-            <div className="user">
+            <div className="user background">
                 <img className="user__img" src={user} alt="" />
                 <div className="user__info">
                     <span className="user__name">Anjelika Borisova</span>

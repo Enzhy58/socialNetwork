@@ -92,6 +92,12 @@ a {
   margin: 0 auto;
 }
 
+.background {
+    background-color: #16171B;
+    border-radius: 21px;
+    border: 1px solid #FFD6FE;
+}
+
 .wrapper {
   display: flex;
   justify-content: space-between;
