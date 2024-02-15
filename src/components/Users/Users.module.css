@@ -1,71 +1,81 @@
 .pagination {
     display: flex;
     justify-content: center;
+    font-size: 24px;
 }
 
-.pagination__link {
-    font-size: 30px;
+.selected {
+    font-weight: 900;
 }
 
-.selectedPage {
-    color: red;
-}
-
-.users__list {
+.list {
     margin-bottom: 50px;
 }
 
-.users__item {
+.item {
     display: flex;
     padding: 30px 30px;
+    background-color: #16171B;
+    border-radius: 21px;
+    border: 1px solid #FFD6FE;
 }
 
-.users__item:not(:last-child) {
+.item:not(:last-child) {
     margin-bottom: 15px;
 }
 
-.users__img {
+.img {
     width: 140px;
     height: 140px;
     border-radius: 50%;
     margin: 0 auto 20px auto;
 }
 
-.users__btn {
+.btn {
     font-size: 20px;
     padding: 5px 50px;
     width: 177px;
+    display: block;
+    background-color: #464C4F;
+    border: none;
+    color: #fff;
+    font-family: 'Jost';
+    font-weight: 400;
+    line-height: 35px;
+    border-radius: 21px;
+    margin-left: auto;
+    cursor: pointer;
 }
 
-.users__wrapper {
+.wrapper {
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin-left: 60px;
 }
 
-.users__info,
-.users__location {
+.info,
+.location {
     display: flex;
     flex-direction: column;
 }
 
-.users__info {
+.info {
     justify-content: space-around;
 }
 
-.users__name {
+.name {
     font-size: 30px;
 }
 
-.users__status {
+.status {
     font-size: 20px;
 }
 
-.users__location {
+.location {
     justify-content: center;
 }
 
-.users__more {
+.more {
     margin: 0 auto;
 }
