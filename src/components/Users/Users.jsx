@@ -3,54 +3,64 @@ import './Users.css';
 import axios from 'axios';
 import userPhoto from '../../assets/images/userPhoto.jpg';
 
-const Users = (props) => {
+class Users extends React.Component {
 
-    if (props.users.length === 0) {
-
-        axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
-            props.setUsers(response.data.items)
+    componentDidMount() {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(response => {
+            this.props.setUsers(response.data.items)
         });
-
     }
 
-    return <div>
 
-        <ul className="users__list">
-            {
-                props.users.map(u => <li className="users__item background" key={u.id} >
+    render() {
 
-                    <div>
+        let pagesCount = Math.ceil (this.props.totalUsersCount / this.props.pageSize);
 
-                        <img className="users__img" src={u.photos.small != null ? u.photos.small : userPhoto} alt="" />
+        let pages = [];
+        for(let i = 1; i <= pagesCount; i++) {
+            pages.push(i);
+        }
+
+        return <div>
+            <ul className="pagination">
+                {pages.map(p => {
+                    return <li className={this.props.currentPage === p && StyleSheet.selectedPage} onClick={ () => {this.props.setCurrentPage(p)} }>{p}</li>
+                })}
+            </ul>
+
+            <ul className="users__list">
+                {
+                    this.props.users.map(u => <li className="users__item background" key={u.id} >
 
                         <div>
-                            {u.followed
-                                ? <button className="btn users__btn" onClick={() => { props.unfollow(u.id) }} >Unfollow</button>
-                                : <button className="btn users__btn" onClick={() => { props.follow(u.id) }}>Follow</button>}
 
-                        </div>
-                    </div>
+                            <img className="users__img" src={u.photos.small != null ? u.photos.small : userPhoto} alt="" />
 
-                    <div className="users__wrapper">
-                        <div className="users__info">
-                            <div className="users__name">{u.name}</div>
-                            <div className="users__status">{u.status}</div>
+                            <div>
+                                {u.followed
+                                    ? <button className="btn users__btn" onClick={() => { this.props.unfollow(u.id) }} >Unfollow</button>
+                                    : <button className="btn users__btn" onClick={() => { this.props.follow(u.id) }}>Follow</button>}
+
+                            </div>
                         </div>
-                        <div className="users__location">
-                            <div>{"u.location.country"},</div>
-                            <div>{"u.location.city"}</div>
+
+                        <div className="users__wrapper">
+                            <div className="users__info">
+                                <div className="users__name">{u.name}</div>
+                                <div className="users__status">{u.status}</div>
+                            </div>
+                            <div className="users__location">
+                                <div>{"u.location.country"},</div>
+                                <div>{"u.location.city"}</div>
+                            </div>
                         </div>
-                    </div>
-                </li>)
-            }
-        </ul>
-        <button className="btn users__more">Show more</button>
-    </div>
+                    </li>)
+                }
+            </ul>
+            <button className="btn users__more">Show more</button>
+        </div>
+    }
+
 }
 
 export default Users;
-
-// { id: 1, photoUrl: 'https://i.pinimg.com/originals/59/f6/d1/59f6d192b9db45b87c09ebdfb184b44d.png', followed: true, fullName: 'Dmitry', status: 'I am looking for a Job right now...', location: { city: 'Minsk', country: 'Belarus' } },
-// { id: 2, photoUrl: 'https://sun9-21.userapi.com/impf/c631229/v631229299/3bc11/A8aMnPzdtiE.jpg?size=800x776&quality=96&sign=d82fbe65ec309e98fc4aa15587dde201&c_uniq_tag=Fo65Ekl0t60bxUiJTxIlJFOuy58vMnIOSh_R7eE51No&type=album', followed: true, fullName: 'Svetlana', status: 'I am so pretty', location: { city: 'Moscow', country: 'Russia' } },
-// { id: 3, photoUrl: 'https://www.ansaroo.com/images/5e/5e78dcf7f83f8994ba19e1448add1afb.jpeg', followed: false, fullName: 'Sergei', status: 'I like a football!!!', location: { city: 'Kiev', country: 'Ukrane' } },
-// { id: 4, photoUrl: 'https://66.media.tumblr.com/8676feb22c8037728ca627d06f83a091/tumblr_orilg1U0E31s3zxg3o1_500.jpg', followed: false, fullName: 'Andrew', status: 'I am free to help you to create good Video Production', location: { city: 'USA', country: 'Philadelphia' } }
