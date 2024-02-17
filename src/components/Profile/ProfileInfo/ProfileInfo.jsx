@@ -1,13 +1,20 @@
+import React from 'react';
+import Preloader from '../../Common/Preloader/Preloader';
 import theme from './../../../assets/images/theme.jpg';
-import user from './../../../assets/images/user.jpg';
+// import user from './../../../assets/images/user.jpg';
 import './ProfileInfo.css';
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+
+    if(!props.profile) {
+        return <Preloader />
+    }
+
     return (
         <div>
             <img className="profile__img" src={theme} alt="тема" width="900" height="310" />
             <div className="user background">
-                <img className="user__img" src={user} alt="" />
+                <img className="user__img" src={props.profile.photos.large} alt="" />
                 <div className="user__info">
                     <span className="user__name">Anjelika Borisova</span>
                     <ul className="user__list">
