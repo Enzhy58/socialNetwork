@@ -1,8 +1,6 @@
 import React from 'react';
 import Preloader from '../../Common/Preloader/Preloader';
 import theme from './../../../assets/images/theme.jpg';
-// import user from './../../../assets/images/user.jpg';
-import './ProfileInfo.css';
 
 const ProfileInfo = (props) => {
 
@@ -12,14 +10,14 @@ const ProfileInfo = (props) => {
 
     return (
         <div>
-            <img className="profile__img" src={theme} alt="тема" width="900" height="310" />
+            <img className="profile__img" src={theme} width="900" height="310" alt="тема" />
             <div className="user background">
-                <img className="user__img" src={props.profile.photos.large} alt="" />
+                <img className="user__img" src={props.profile.photos.large} width="200" height="200" alt="" />
                 <div className="user__info">
-                    <span className="user__name">Anjelika Borisova</span>
+                    <span className="user__name">{props.profile.fullName}</span>
                     <ul className="user__list">
-                        <li className="user__item">Date of Birth: 19 June</li>
-                        <li className="user__item">City: Penza</li>
+                        <li className="user__item">{props.profile.aboutMe}</li>
+                        <li className="user__item">{props.profile.lookingForAJobDescription}</li>
                         <li className="user__item">Hobby: create websites, music, pole sport</li>
                         <li className="user__item">Website: htpps://super-woman.com</li>
                     </ul>

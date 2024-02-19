@@ -1,4 +1,4 @@
-import styles from './Users.module.css';
+import './Users.css';
 import userPhoto from '../../assets/images/userPhoto.jpg';
 import { NavLink } from 'react-router-dom';
 import { userAPI } from '../../api/api';
@@ -13,23 +13,18 @@ let Users = (props) => {
     }
 
     return <div>
-        <ul className={styles.pagination}>
-            {pages.map(p => {
-                return <li className={props.currentPage === p && styles.selected} onClick={(e) => { props.onPageChanged(p) }}>{p}</li>
-            })}
-        </ul>
 
-        <ul className={styles.list}>
+        <ul className="users">
             {
-                props.users.map(u => <li className={styles.item} key={u.id} >
+                props.users.map(u => <li className="users__item background" key={u.id} >
 
                     <div>
 
-                        <NavLink to={'/profile/' + u.id} > <img className={styles.img} src={u.photos.small != null ? u.photos.small : userPhoto} alt="" /> </NavLink>
+                        <NavLink to={'/profile/' + u.id} > <img className="users__img" src={u.photos.small != null ? u.photos.small : userPhoto} alt="" /> </NavLink>
 
                         <div>
                             {u.followed
-                                ? <button className={styles.btn} disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+                                ? <button className="users__btn btn" disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
                                     props.toggleFollowingProgress(true, u.id);
 
                                     userAPI.unfollow(u.id)
@@ -45,7 +40,7 @@ let Users = (props) => {
                                 }} >Unfollow</button>
 
 
-                                : <button className={styles.btn} disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+                                : <button className="users__btn btn" disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
                                     props.toggleFollowingProgress(true, u.id);
 
                                     userAPI.follow(u.id)
@@ -62,12 +57,12 @@ let Users = (props) => {
                         </div>
                     </div>
 
-                    <div className={styles.wrapper}>
-                        <div className={styles.info}>
-                            <div className={styles.name}>{u.name}</div>
-                            <div className={styles.status}>{u.status}</div>
+                    <div className="users__wrapper">
+                        <div className="users__info">
+                            <div className="users__name">{u.name}</div>
+                            <div className="users__status">{u.status}</div>
                         </div>
-                        <div className={styles.location}>
+                        <div className="users__location">
                             <div>{"u.location.country"},</div>
                             <div>{"u.location.city"}</div>
                         </div>
@@ -75,7 +70,15 @@ let Users = (props) => {
                 </li>)
             }
         </ul>
-        <button className={styles.btn}>Show more</button>
+
+        <button className="users__more btn">Show more</button>
+
+        <ul className="pagination">
+            {pages.map(p => {
+                return <li className="pagination__item" onClick={(e) => { props.onPageChanged(p) }}>{p}</li>
+            })}
+        </ul>
+
     </div >
 }
 

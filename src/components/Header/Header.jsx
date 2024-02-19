@@ -7,13 +7,15 @@ const Header = (props) => {
         <header className="header">
 
             <div className="container">
-                <a className="logo" href="#">
-                    <img className="logo__img" src={logo} alt="логотип" />
-                </a>
-                <div className="login">
+                <div className="header__inner">
+                    <a className="logo" href="#">
+                        <img className="logo__img" src={logo} width="197" height="56" alt="logo" />
+                    </a>
+                    <div className="login">
 
-                       { props.isAuth ? props.login : <NavLink to={'/login'}>Login</NavLink> }
-                    
+                        {props.isAuth ? props.login : <NavLink to={'/login'}>Login</NavLink>}
+
+                    </div>
                 </div>
             </div>
 

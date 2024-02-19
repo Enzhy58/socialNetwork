@@ -3,3 +3,13 @@
     padding: 10px;
     margin-bottom: 20px;
 }
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login {
+    font-size: 20px;
+}

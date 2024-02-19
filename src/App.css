@@ -71,8 +71,7 @@ a {
 a,
 button,
 input,
-textarea,
-.reviews__box {
+textarea {
   outline: transparent;
 }
 
@@ -104,7 +103,7 @@ a {
 }
 
 .app__wrapper {
-  max-width: 900px;
+  max-width: 830px;
   width: 100%;
 }
 
@@ -138,14 +137,22 @@ a {
 .btn {
   display: block;
   background-color: #464C4F;
-  border: none;
-  color: #fff;
   font-family: 'Jost';
-  font-weight: 400;
   font-size: 24px;
   line-height: 35px;
   padding: 10px 70px;
   border-radius: 21px;
   margin-left: auto;
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.pagination__item:not(:last-child) {
+  margin-right: 20px;
   cursor: pointer;
 }

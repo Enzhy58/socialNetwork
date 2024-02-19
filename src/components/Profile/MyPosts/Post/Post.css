@@ -15,17 +15,11 @@
 
 .post__text {
     font-family: 'Jost';
-    font-weight: 400;
     font-size: 20px;
     line-height: 29px;
 }
 
-.post__text p {
-    margin: 0;
-}
-
 .post__like {
-    display: block;
     position: relative;
     padding-left: 30px;
 }
