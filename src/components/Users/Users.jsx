@@ -1,7 +1,7 @@
 import styles from './Users.module.css';
 import userPhoto from '../../assets/images/userPhoto.jpg';
 import { NavLink } from 'react-router-dom';
-import axios from 'axios';
+import { userAPI } from '../../api/api';
 
 let Users = (props) => {
 
@@ -31,38 +31,28 @@ let Users = (props) => {
                             {u.followed
                                 ? <button className={styles.btn} onClick={() => {
 
-                                    axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
-                                        withCredentials: true,
-                                        headers: {
-                                            "API-KEY": "836e212d-509f-4ecf-be4d-0ae77c1c5cab"
-                                        }
-                                    })
+                                    userAPI.unfollow(u.id)
                                         .then(response => {
                                             if (response.data.resultCode === 0) {
-                                                props.unfollow(u.id) 
+                                                props.unfollow(u.id)
                                             }
                                         });
-                                    
-                                
-                                
+
+
+
                                 }} >Unfollow</button>
 
 
                                 : <button className={styles.btn} onClick={() => {
 
-                                    axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
-                                        withCredentials: true,
-                                        headers: {
-                                            "API-KEY": "836e212d-509f-4ecf-be4d-0ae77c1c5cab"
-                                        }
-                                    })
+                                    userAPI.follow(u.id)
                                         .then(response => {
                                             if (response.data.resultCode === 0) {
-                                                props.follow(u.id) 
+                                                props.follow(u.id)
                                             }
                                         });
-                                    
-                                    
+
+
                                 }}>Follow</button>}
 
                         </div>
@@ -82,7 +72,7 @@ let Users = (props) => {
             }
         </ul>
         <button className={styles.btn}>Show more</button>
-    </div>
+    </div >
 }
 
 export default Users;
