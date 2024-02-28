@@ -1,6 +1,7 @@
 import React from 'react';
 import Preloader from '../../Common/Preloader/Preloader';
 import theme from './../../../assets/images/theme.jpg';
+import ProfileStatus from './ProfileStatus';
 
 const ProfileInfo = (props) => {
 
@@ -18,6 +19,7 @@ const ProfileInfo = (props) => {
                     <ul className="user__list">
                         <li className="user__item">{props.profile.aboutMe}</li>
                         <li className="user__item">{props.profile.lookingForAJobDescription}</li>
+                        <ProfileStatus status="hello my friends" />
                         <li className="user__item">Hobby: create websites, music, pole sport</li>
                         <li className="user__item">Website: htpps://super-woman.com</li>
                     </ul>
