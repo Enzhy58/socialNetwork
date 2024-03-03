@@ -17,9 +17,7 @@ const ProfileInfo = (props) => {
                 <div className="user__info">
                     <span className="user__name">{props.profile.fullName}</span>
                     <ul className="user__list">
-                        <li className="user__item">{props.profile.aboutMe}</li>
-                        <li className="user__item">{props.profile.lookingForAJobDescription}</li>
-                        <ProfileStatus status="hello my friends" />
+                        <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
                         <li className="user__item">Hobby: create websites, music, pole sport</li>
                         <li className="user__item">Website: htpps://super-woman.com</li>
                     </ul>
